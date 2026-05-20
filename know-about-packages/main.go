@@ -25,20 +25,20 @@ func main() {
 		fmt.Println("4 - Exit")
 
 		var choice int
-		fmt.Scan(&choice)
+		fmt.Scan(choice)
 
 		switch choice {
 		case 1:
 			fmt.Println(accountBalance)
 			var deposit float64
-			fmt.Scan(&deposit)
+			fmt.Scan(deposit)
 			if deposit <= 0 {
 				continue
 			}
 			accountBalance += deposit
 		case 2:
 			var deposit float64
-			fmt.Scan(&deposit)
+			fmt.Scan(deposit)
 			if deposit <= 0 {
 				continue
 			}
@@ -46,10 +46,10 @@ func main() {
 			writeBalanceToFile(accountBalance)
 		case 3:
 			var withdraw float64
-			fmt.Scan(&withdraw)
+			fmt.Scan(withdraw)
 			accountBalance -= withdraw
 			writeBalanceToFile(accountBalance)
-		default:
+		case 4:
 			return
 		}
 	}
